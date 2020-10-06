@@ -1,0 +1,953 @@
+record(stringin, "$(P)$(R)StatusMsg"){
+    field(DESC, "Status Message")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynOctetRead")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))DriverStatusMessage")
+}
+record(stringin, "$(P)$(R)Serial"){
+    field(DESC, "Serial number")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynOctetRead")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))Serial")
+}
+record(longin, "$(P)$(R)Inventory"){
+    field(DESC, "Inventory number")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))Inventory")
+}
+record(stringin, "$(P)$(R)FuncPosition"){
+    field(DESC, "Functional position name")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynOctetRead")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))FuncPosition")
+}
+record(stringin, "$(P)$(R)Firmware"){
+    field(DESC, "Firmware version")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynOctetRead")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))Firmware")
+}
+record(mbbi, "$(P)$(R)DetType"){
+    field(DESC, "Detector type")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))DetType")
+    field(ZRVL, "0")
+    field(ZRST, "IG5-A20")
+    field(ONVL, "1")
+    field(ONST, "IG5-H20")
+    field(TWVL, "2")
+    field(TWST, "IG5T-A15")
+    field(THVL, "3")
+    field(THST, "IG5T-N15")
+    field(FRVL, "4")
+    field(FRST, "IG32-A3.1")
+    field(FVVL, "5")
+    field(FVST, "T32006")
+    field(SXVL, "6")
+    field(SXST, "FHT762")
+}
+record(mbbi, "$(P)$(R)Mode_S"){
+    field(DESC, "Get Operating mode")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))Mode")
+    field(ZRVL, "0")
+    field(ZRST, "Off")
+    field(ONVL, "1")
+    field(ONST, "Measurement")
+    field(TWVL, "2")
+    field(TWST, "Maintenance")
+    field(THVL, "3")
+    field(THST, "Calibration")
+}
+record(mbbo, "$(P)$(R)Mode_RB"){
+    field(DESC, "Set Operating mode")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))Mode")
+    field(ZRVL, "0")
+    field(ZRST, "Off")
+    field(ONVL, "1")
+    field(ONST, "Measurement")
+    field(TWVL, "2")
+    field(TWST, "Maintenance")
+    field(THVL, "3")
+    field(THST, "Calibration")
+}
+record(stringin, "$(P)$(R)DateTime"){
+    field(DESC, "System date and time in epoch time in ms")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynOctetRead")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))DateTime")
+}
+record(bo, "$(P)$(R)TimeSyncEnabled_S"){
+    field(DESC, "Set time synchronisation status")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TimeSyncEnabled")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+}
+record(bi, "$(P)$(R)TimeSyncEnabled_RB"){
+    field(DESC, "Get time synchronisation status")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TimeSyncEnabled")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+}
+record(stringin, "$(P)$(R)IP"){
+    field(DESC, "Network IP address")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynOctetRead")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))IP")
+}
+record(stringin, "$(P)$(R)DHCP"){
+    field(DESC, "DHCP address")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynOctetRead")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))DHCP")
+}
+record(stringin, "$(P)$(R)Subnet"){
+    field(DESC, "Subnet mask")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynOctetRead")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))Subnet")
+}
+record(stringin, "$(P)$(R)DNS1"){
+    field(DESC, "Domain Name Server IP")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynOctetRead")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))DNS1")
+}
+record(stringin, "$(P)$(R)DNS2"){
+    field(DESC, "Domain Name Server IP")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynOctetRead")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))DNS2")
+}
+record(stringin, "$(P)$(R)NetworkName"){
+    field(DESC, "Network Name")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynOctetRead")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NetworkName")
+}
+record(stringin, "$(P)$(R)TimeServer1"){
+    field(DESC, "Timer server name")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynOctetRead")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TimeServer1")
+}
+record(stringin, "$(P)$(R)TimeServer2"){
+    field(DESC, "Timer server name")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynOctetRead")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TimeServer2")
+}
+record(longin, "$(P)$(R)InternalParam1"){
+    field(DESC, "Internal parameter used debug purposes")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))InternalParam1")
+}
+record(longout, "$(P)$(R)RefreshTime_S"){
+    field(DESC, "Set Time intrval for monitor pushes data")
+    field(EGU, "s")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))RefreshTime")
+    field(DRVH, "86400")
+    field(DRVL, "0")
+}
+record(longin, "$(P)$(R)RefreshTime_RB"){
+    field(DESC, "Get Time intrval for monitor pushes data")
+    field(EGU, "s")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))RefreshTime")
+}
+record(longout, "$(P)$(R)DeviceCycleTime_S"){
+    field(DESC, "Set Device cycle time (Fault Check)")
+    field(EGU, "100ms")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))DeviceCycleTime")
+    field(DRVH, "86400")
+    field(DRVL, "0")
+}
+record(longin, "$(P)$(R)DeviceCycleTime_RB"){
+    field(DESC, "Get Device cycle time (Fault Check)")
+    field(EGU, "100ms")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))DeviceCycleTime")
+}
+record(longout, "$(P)$(R)MeasTime_S"){
+    field(DESC, "Set Basic measurement time")
+    field(EGU, "100ms")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))MeasTime")
+    field(DRVH, "864000")
+    field(DRVL, "10")
+}
+record(longin, "$(P)$(R)MeasTime_RB"){
+    field(DESC, "Get Basic measurement time")
+    field(EGU, "100ms")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))MeasTime")
+}
+record(longout, "$(P)$(R)Integral1Time_S"){
+    field(DESC, "Set Integration time for integral value1")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))Integral1Time")
+    field(DRVH, "31622400")
+    field(DRVL, "0")
+}
+record(longin, "$(P)$(R)Integral1Time_RB"){
+    field(DESC, "Get Integration time for integral value1")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))Integral1Time")
+}
+record(longout, "$(P)$(R)Integral2Time_S"){
+    field(DESC, "Set Integration time for integral value2")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))Integral2Time")
+    field(DRVH, "31622400")
+    field(DRVL, "0")
+}
+record(longin, "$(P)$(R)Integral2Time_RB"){
+    field(DESC, "Get Integration time for integral value2")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))Integral2Time")
+}
+record(ao, "$(P)$(R)MinTimeCoeff_S"){
+    field(DESC, "Set Avg. time for min rate threshold")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))MinTimeCoeff")
+    field(DRVH, "0.99999")
+    field(DRVL, "0.00001")
+}
+record(ai, "$(P)$(R)MinTimeCoeff_RB"){
+    field(DESC, "Get Avg. time for min rate threshold")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))MinTimeCoeff")
+}
+record(ao, "$(P)$(R)MaxTimeCoeff_S"){
+    field(DESC, "Set Avg. time for max rate threshold")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))MaxTimeCoeff")
+    field(DRVH, "0.99999")
+    field(DRVL, "0.00001")
+}
+record(ai, "$(P)$(R)MaxTimeCoeff_RB"){
+    field(DESC, "Get Avg. time for max rate threshold")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))MaxTimeCoeff")
+}
+record(longout, "$(P)$(R)THTime_S"){
+    field(DESC, "Get Time interval for temp/humidity")
+    field(EGU, "s")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))THTime")
+}
+record(longin, "$(P)$(R)THTime_RB"){
+    field(DESC, "Set Time interval for temp/humidity")
+    field(EGU, "s")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))THTime")
+}
+record(longout, "$(P)$(R)PowerTime_S"){
+    field(DESC, "Set interval where PS status is checked")
+    field(EGU, "s")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PowerTime")
+}
+record(longin, "$(P)$(R)PowerTime_RB"){
+    field(DESC, "Get interval where PS status is checked")
+    field(EGU, "s")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PowerTime")
+}
+record(longout, "$(P)$(R)CAUAttached_S"){
+    field(DESC, "Set Number of attached alarm units")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))CAUAttached")
+    field(DRVH, "86400")
+    field(DRVL, "0")
+}
+record(longin, "$(P)$(R)CAUAttached_RB"){
+    field(DESC, "Get Number of attached alarm units")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))CAUAttached")
+}
+record(bo, "$(P)$(R)Integral1Reset"){
+    field(DESC, "Zeroes the Integral1 value")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))Integral1Reset")
+}
+record(bo, "$(P)$(R)Integral2Reset"){
+    field(DESC, "Zeroes the Integral2 value")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))Integral2Reset")
+}
+record(ao, "$(P)$(R)ConvFactor_S"){
+    field(DESC, "Set Conversion factor")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))ConvFactor")
+}
+record(ai, "$(P)$(R)ConvFactor_RB"){
+    field(DESC, "Get Conversion factor")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))ConvFactor")
+}
+record(ao, "$(P)$(R)CorrFactor_S"){
+    field(DESC, "Set Correction factor")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))CorrFactor")
+}
+record(ai, "$(P)$(R)CorrFactor_RB"){
+    field(DESC, "Get Correction factor")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))CorrFactor")
+}
+record(ao, "$(P)$(R)Offset_S"){
+    field(DESC, "Set Offset value of the measurement")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))Offset")
+}
+record(ai, "$(P)$(R)Offset_RB"){
+    field(DESC, "Get Offset value of the measurement")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))Offset")
+}
+record(mbbo, "$(P)$(R)MeasUnit_S"){
+    field(DESC, "Get Measurement unit")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))MeasUnit")
+    field(ONVL, "1")
+    field(ONST, "Sv/h")
+    field(TWVL, "2")
+    field(TWST, "Gy/h")
+}
+record(mbbi, "$(P)$(R)MeasUnit_RB"){
+    field(DESC, "Set Measurement unit")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))MeasUnit")
+    field(ONVL, "1")
+    field(ONST, "Sv")
+    field(TWVL, "2")
+    field(TWST, "Gy")
+}
+record(mbbo, "$(P)$(R)ConvUnit_S"){
+    field(DESC, "Set Unit of the conversion factor")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))ConvUnit")
+    field(ONVL, "1")
+    field(ONST, "(Sv/h)/A")
+    field(TWVL, "2")
+    field(TWST, "(Sv/h)/cps")
+}
+record(mbbi, "$(P)$(R)ConvUnit_RB"){
+    field(DESC, "Get Unit of the conversion factor")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))ConvUnit")
+}
+record(mbbo, "$(P)$(R)DefaultPrefix_S"){
+    field(DESC, "Set default prefix")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))DefaultPrefix")
+    field(ZRVL, "0")
+    field(ZRST, "n")
+    field(ONVL, "1")
+    field(ONST, "u")
+    field(TWVL, "2")
+    field(TWST, "m")
+    field(THVL, "3")
+    field(FRVL, "4")
+    field(FRST, "auto")
+}
+record(mbbi, "$(P)$(R)DefaultPrefix_RB"){
+    field(DESC, "Get default prefix")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))DefaultPrefix")
+    field(ZRVL, "0")
+    field(ZRST, "n")
+    field(ONVL, "1")
+    field(ONST, "u")
+    field(TWVL, "2")
+    field(TWST, "m")
+    field(THVL, "3")
+    field(FRVL, "4")
+    field(FRST, "auto")
+}
+record(mbbo, "$(P)$(R)AvgAlgorithm_S"){
+    field(DESC, "Set Avg. algorithm for rate measurement")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))AvgAlgorithm")
+    field(ZRVL, "0")
+    field(ZRST, "Simple MA")
+    field(ONVL, "1")
+    field(ONST, "Exp. MA")
+    field(TWVL, "2")
+    field(TWST, "Weighted MA")
+}
+record(mbbi, "$(P)$(R)AvgAlgorithm_RB"){
+    field(DESC, "Get Avg. algorithm for rate measurement")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))AvgAlgorithm")
+    field(ZRVL, "0")
+    field(ZRST, "Simple MA")
+    field(ONVL, "1")
+    field(ONST, "Exp. MA")
+    field(TWVL, "2")
+    field(TWST, "Weighted MA")
+}
+record(ao, "$(P)$(R)WeightCoeff_S"){
+    field(DESC, "Set Weighting coefficient for Exp MA")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))WeightCoeff")
+    field(DRVH, "0.99999")
+    field(DRVL, "0.00001")
+}
+record(ai, "$(P)$(R)WeightCoeff_RB"){
+    field(DESC, "Get Weighting coefficient for Exp MA")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))WeightCoeff")
+}
+record(ao, "$(P)$(R)Hysteresis_S"){
+    field(DESC, "Set Hysteresis for alert or alarm switch")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))Hysteresis")
+    field(DRVH, "0")
+    field(DRVL, "1")
+}
+record(ai, "$(P)$(R)Hysteresis_RB"){
+    field(DESC, "Get Hysteresis for alert or alarm switch")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))Hysteresis")
+}
+record(ao, "$(P)$(R)AlertThres_S"){
+    field(DESC, "Set Rate alert threshold")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))AlertThres")
+}
+record(ai, "$(P)$(R)AlertThres_RB"){
+    field(DESC, "Get Rate alert threshold")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))AlertThres")
+}
+record(ao, "$(P)$(R)AlarmThres_S"){
+    field(DESC, "Set Rate alarm threshold")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))AlarmThres")
+}
+record(ai, "$(P)$(R)AlarmThres_RB"){
+    field(DESC, "Get Rate alarm threshold")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))AlarmThres")
+}
+record(ao, "$(P)$(R)SpecialAlarmThres_S"){
+    field(DESC, "Set Rate special alarm threshold")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))SpecialAlarmThres")
+}
+record(ai, "$(P)$(R)SpecialAlarmThres_RB"){
+    field(DESC, "Get Rate special alarm threshold")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))SpecialAlarmThres")
+}
+record(bo, "$(P)$(R)AlertOperator_S"){
+    field(DESC, "Set Comparison operator for alert thres")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))AlertOperator")
+    field(ZNAM, ">=")
+    field(ONAM, "<")
+}
+record(bi, "$(P)$(R)AlertOperator_RB"){
+    field(DESC, "Get Comparison operator for alert thres")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))AlertOperator")
+    field(ZNAM, ">=")
+    field(ONAM, "<")
+}
+record(bo, "$(P)$(R)AlarmOperator_S"){
+    field(DESC, "Set Comparison operator for alarm thres")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))AlarmOperator")
+    field(ZNAM, ">=")
+    field(ONAM, "<")
+}
+record(bi, "$(P)$(R)AlarmOperator_RB"){
+    field(DESC, "Get Comparison operator for alarm thres")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))AlarmOperator")
+    field(ZNAM, ">=")
+    field(ONAM, "<")
+}
+record(bo, "$(P)$(R)SpecialAlarmOperator_S"){
+    field(DESC, "Set Comp operator for special alrm thres")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))SpecialAlarmOperator")
+    field(ZNAM, ">=")
+    field(ONAM, "<")
+}
+record(bi, "$(P)$(R)SpecialAlarmOperator_RB"){
+    field(DESC, "Get Comp operator for special alrm thres")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))SpecialAlarmOperator")
+    field(ZNAM, ">=")
+    field(ONAM, "<")
+}
+record(bo, "$(P)$(R)AlertLatched_S"){
+    field(DESC, "Set Alert in latched mode")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))AlertLatched")
+    field(ZNAM, "Off")
+    field(ONAM, "Latched")
+}
+record(bi, "$(P)$(R)AlertLatched_RB"){
+    field(DESC, "Get Alert in latched mode")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))AlertLatched")
+    field(ZNAM, "Off")
+    field(ONAM, "Latched")
+}
+record(bo, "$(P)$(R)AlarmLatched_S"){
+    field(DESC, "Set Alarm in latched mode")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))AlarmLatched")
+    field(ZNAM, "Off")
+    field(ONAM, "Latched")
+}
+record(bi, "$(P)$(R)AlarmLatched_RB"){
+    field(DESC, "Get Alarm in latched mode")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))AlarmLatched")
+    field(ZNAM, "Off")
+    field(ONAM, "Latched")
+}
+record(bo, "$(P)$(R)SpecialAlarmLatched_S"){
+    field(DESC, "Set Special alarm in latched mode")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))SpecialAlarmLatched")
+    field(ZNAM, "Off")
+    field(ONAM, "Latched")
+}
+record(bi, "$(P)$(R)SpecialAlarmLatched_RB"){
+    field(DESC, "Get Special alarm in latched mode")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))SpecialAlarmLatched")
+    field(ZNAM, "Off")
+    field(ONAM, "Latched")
+}
+record(bo, "$(P)$(R)AlertReset_S"){
+    field(DESC, "Set To reset a latched alert")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))AlertReset")
+    field(ZNAM, "Off")
+    field(ONAM, "Latched")
+}
+record(bi, "$(P)$(R)AlertReset_RB"){
+    field(DESC, "Get To reset a latched alert")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))AlertReset")
+    field(ZNAM, "Off")
+    field(ONAM, "Latched")
+}
+record(bo, "$(P)$(R)AlarmReset_S"){
+    field(DESC, "Set To reset a latched alarm")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))AlarmReset")
+    field(ZNAM, "Off")
+    field(ONAM, "Latched")
+}
+record(bi, "$(P)$(R)AlarmReset_RB"){
+    field(DESC, "Get To reset a latched alarm")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))AlarmReset")
+    field(ZNAM, "Off")
+    field(ONAM, "Latched")
+}
+record(bo, "$(P)$(R)SpecialAlarmReset_S"){
+    field(DESC, "Set To reset a latched special alarm")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))SpecialAlarmReset")
+    field(ZNAM, "Off")
+    field(ONAM, "Latched")
+}
+record(bi, "$(P)$(R)SpecialAlarmReset_RB"){
+    field(DESC, "Get To reset a latched special alarm")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))SpecialAlarmReset")
+    field(ZNAM, "Off")
+    field(ONAM, "Latched")
+}
+record(ao, "$(P)$(R)Integral1Thres_S"){
+    field(DESC, "Set Integral1 threshold")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))Integral1Thres")
+}
+record(ai, "$(P)$(R)Integral1Thres_RB"){
+    field(DESC, "Get Integral1 threshold")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))Integral1Thres")
+}
+record(ao, "$(P)$(R)Integral2Thres_S"){
+    field(DESC, "Set Integral2 threshold")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))Integral2Thres")
+}
+record(ai, "$(P)$(R)Integral2Thres_RB"){
+    field(DESC, "Get Integral2 threshold")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))Integral2Thres")
+}
+record(bo, "$(P)$(R)Integral1Latched_S"){
+    field(DESC, "Set Integral1 in latched mode")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))Integral1Latched")
+    field(ZNAM, "Off")
+    field(ONAM, "Latched")
+}
+record(bi, "$(P)$(R)Integral1Latched_Rb"){
+    field(DESC, "Get Integral1 in latched mode")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))Integral1Latched")
+    field(ZNAM, "Off")
+    field(ONAM, "Latched")
+}
+record(bo, "$(P)$(R)Integral2Latched_S"){
+    field(DESC, "Set Integral2 in latched mode")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))Integral2Latched")
+    field(ZNAM, "Off")
+    field(ONAM, "Latched")
+}
+record(bi, "$(P)$(R)Integral2Latched_RB"){
+    field(DESC, "Get Integral2 in latched mode")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))Integral2Latched")
+    field(ZNAM, "Off")
+    field(ONAM, "Latched")
+}
+record(bo, "$(P)$(R)Integral1AlarmReset"){
+    field(DESC, "Reset Integral1 alarm")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))Integral1AlarmReset")
+}
+record(bo, "$(P)$(R)Integral2AlarmReset"){
+    field(DESC, "Reset Integral2 alarm")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))Integral2AlarmReset")
+}
+record(ao, "$(P)$(R)MinThres_S"){
+    field(DESC, "Set Minimum rate threshold")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))MinThres")
+}
+record(ai, "$(P)$(R)MinThres_RB"){
+    field(DESC, "Get Minimum rate threshold")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))MinThres")
+}
+record(ao, "$(P)$(R)MaxThres_S"){
+    field(DESC, "Set Maximum rate threshold")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))MaxThres")
+}
+record(ai, "$(P)$(R)MaxThresRB"){
+    field(DESC, "Get Maximum rate threshold")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))MaxThres")
+}
+record(bo, "$(P)$(R)PersistentFaultReset"){
+    field(DESC, "Resets a detected persistent fault")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PersistentFaultReset")
+}
+record(stringin, "$(P)$(R)ParametersTimeStamp"){
+    field(DESC, "Time stamp of the last parametrization")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynOctetRead")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))ParametersTimeStamp")
+}
+record(bo, "$(P)$(R)Reboot"){
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))Reboot")
+}
+record(bo, "$(P)$(R)FlushMemories"){
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))FlushMemories")
+}
+record(bo, "$(P)$(R)SyncClock"){
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))SyncClock")
+}
+record(longin, "$(P)$(R)CountConfig"){
+    field(DESC, "# of pulses by the VFC in time window")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))CountConfig")
+}
+record(longin, "$(P)$(R)CAUSerial"){
+    field(DESC, "CAU Serial")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))CAUSerial")
+}
+record(longin, "$(P)$(R)MSID"){
+    field(DESC, "Measurement Station ID")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))MSID")
+}
+record(longout, "$(P)$(R)SetHighVoltage"){
+    field(DESC, "Sets the value of the high voltage")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))SetHighVoltage")
+    field(DRVH, "0")
+    field(DRVL, "-2000")
+}
+record(ao, "$(P)$(R)SetHVControlVoltage"){
+    field(DESC, "Set low voltage value for external HV")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))SetHVControlVoltage")
+    field(DRVH, "0")
+    field(DRVL, "10")
+}
+record(longout, "$(P)$(R)AvgTimeFactor_S"){
+    field(DESC, "Set Average time factor")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))AvgTimeFactor")
+    field(DRVH, "3600")
+    field(DRVL, "1")
+}
+record(longin, "$(P)$(R)AvgTimeFactor_RB"){
+    field(DESC, "Get Average time factor")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))AvgTimeFactor")
+}
+record(ao, "$(P)$(R)WeightVector1_S"){
+    field(DESC, "Set Weight factor1 for the WMA algorithm")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))WeightVector1")
+    field(DRVH, "0")
+    field(DRVL, "1")
+}
+record(ai, "$(P)$(R)WeightVector1_RB"){
+    field(DESC, "Get Weight factor1 for the WMA algorithm")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))WeightVector1")
+}
+record(ao, "$(P)$(R)WeightVector2_S"){
+    field(DESC, "Set Weight factor2 for the WMA algorithm")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))WeightVector2")
+    field(DRVH, "0")
+    field(DRVL, "1")
+}
+record(ai, "$(P)$(R)WeightVector2_RB"){
+    field(DESC, "Get Weight factor2 for the WMA algorithm")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))WeightVector2")
+}
+record(ao, "$(P)$(R)WeightVector3_S"){
+    field(DESC, "Set Weight factor3 for the WMA algorithm")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))WeightVector3")
+    field(DRVH, "0")
+    field(DRVL, "1")
+}
+record(ai, "$(P)$(R)WeightVector3_RB"){
+    field(DESC, "Get Weight factor3 for the WMA algorithm")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))WeightVector3")
+}
+record(ao, "$(P)$(R)WeightVector4_S"){
+    field(DESC, "Set Weight factor4 for the WMA algorithm")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))WeightVector4")
+    field(DRVH, "0")
+    field(DRVL, "1")
+}
+record(ai, "$(P)$(R)WeightVector4_RB"){
+    field(DESC, "Get Weight factor4 for the WMA algorithm")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))WeightVector4")
+}
+record(ao, "$(P)$(R)WeightVector5_S"){
+    field(DESC, "Set Weight factor5 for the WMA algorithm")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))WeightVector5")
+    field(DRVH, "0")
+    field(DRVL, "1")
+}
+record(ai, "$(P)$(R)WeightVector5_RB"){
+    field(DESC, "Get Weight factor5 for the WMA algorithm")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))WeightVector5")
+}
+record(ao, "$(P)$(R)WeightVector6_S"){
+    field(DESC, "Set Weight factor6 for the WMA algorithm")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))WeightVector6")
+    field(DRVH, "0")
+    field(DRVL, "1")
+}
+record(ai, "$(P)$(R)WeightVector6_RB"){
+    field(DESC, "Get Weight factor6 for the WMA algorithm")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))WeightVector6")
+}
+record(ao, "$(P)$(R)WeightVector7_S"){
+    field(DESC, "Set Weight factor7 for the WMA algorithm")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))WeightVector7")
+    field(DRVH, "0")
+    field(DRVL, "1")
+}
+record(ai, "$(P)$(R)WeightVector7_RB"){
+    field(DESC, "Get Weight factor7 for the WMA algorithm")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))WeightVector7")
+}
+record(ao, "$(P)$(R)WeightVector8_S"){
+    field(DESC, "Set Weight factor8 for the WMA algorithm")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))WeightVector8")
+    field(DRVH, "0")
+    field(DRVL, "1")
+}
+record(ai, "$(P)$(R)WeightVector8_RB"){
+    field(DESC, "Get Weight factor8 for the WMA algorithm")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))WeightVector8")
+}
+record(ao, "$(P)$(R)WeightVector9_S"){
+    field(DESC, "Set Weight factor9 for the WMA algorithm")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))WeightVector9")
+    field(DRVH, "0")
+    field(DRVL, "1")
+}
+record(ai, "$(P)$(R)WeightVector9_RB"){
+    field(DESC, "Get Weight factor9 for the WMA algorithm")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))WeightVector9")
+}
+record(ao, "$(P)$(R)WeightVector10_S"){
+    field(DESC, "Set Weight factor10 for the WMA algorith")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))WeightVector10")
+    field(DRVH, "0")
+    field(DRVL, "1")
+}
+record(ai, "$(P)$(R)WeightVector10_RB"){
+    field(DESC, "Get Weight factor10 for the WMA algorith")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))WeightVector10")
+}
